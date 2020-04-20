@@ -18,6 +18,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script src="//code.jquery.com/jquery-1.11.0.min.js" async></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" async></script>
     <link
       rel="stylesheet"
@@ -242,7 +244,7 @@
         <div class="card card-body py-5 border-success">
           <h3>Education:</h3>
            <div class="card-deck hover">
-            <div class="card">
+            <div class="card card1">
               <div class="card-body ">
                 <h4 class="card-title">Thapar Institute of Engineering and Technology</h4>
                 <p class="card-text">
@@ -260,7 +262,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card card1">
               <div class="card-body">
                 <h4 class="card-title">Apollo International School, Dehradun.</h4>
                 <p class="card-text">
@@ -279,7 +281,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card card1">
               <div class="card-body">
                 <h4 class="card-title">Ann Mary School,Dehradun.</h4>
                 <p class="card-text">
@@ -621,10 +623,10 @@
         $(".collapse").collapse("hide");
       });
       
-    $(document).on('click', '[data-toggle="lightbox"]', function (e) {
+      $(document).on('click', '[data-toggle="lightbox"]', function (e) {
       e.preventDefault();
       $(this).ekkoLightbox();
-    });
+      });
     </script>
   </body>
 </html>
