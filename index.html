@@ -79,10 +79,10 @@
                 </div>
                 <div data-toggle="tooltip" data-placement="bottom" title="Github">
                   <a class="social-font" href="https://github.com/harshsharma2210" class="text-white" target="_blank">
-                    <i class="fab fa-github" ></i>
+                    <i class="fab fa-github"></i>
                   </a>
                 </div>
-                <div  data-toggle="tooltip" data-placement="bottom" title="Upwork">
+                <div data-toggle="tooltip" data-placement="bottom" title="Upwork">
                   <a class="social-font" href="https://www.upwork.com/o/profiles/users/~01c4bfb457a4f9f825/" ;
                     class="text-white" target="_blank">
                     <i class="fas fa-laptop-house"></i>
@@ -371,7 +371,7 @@
                 <td>Advance</td>
                 <td>Redux</td>
               </tr>
-              
+
               <tr>
                 <th scope="row">13</th>
                 <td>Chrome Extensions</td>
@@ -570,11 +570,8 @@
 
 
 
-
-
-
-
     <!-- CONTACT -->
+
     <div id="contact" class="collapse">
       <div class="card card-body bg-danger text-white py-5">
         <h2>Contact</h2>
@@ -586,7 +583,7 @@
       <div class="card card-body py-5 border-danger">
         <h3>Get In Touch</h3>
         <br>
-        <form method="post" action="mailto:harshsharma102000@gmail.com" enctype="text/plain">
+        <form action="/" id="contact-form" method="post" role="form">
           <div class="form-group">
             <div class="input-group input-group-lg">
               <div class="input-group-prepend">
@@ -594,7 +591,7 @@
                   <i class="fas fa-user"></i>
                 </span>
               </div>
-              <input type="text" class="form-control  text-dark" placeholder="Name" name="Name" />
+              <input id="name" name="name" type="text" class="form-control  text-dark" placeholder="Name" required />
             </div>
           </div>
 
@@ -605,7 +602,8 @@
                   <i class="fas fa-envelope"></i>
                 </span>
               </div>
-              <input type="email" class="form-control  text-dark" placeholder="Email" name="Email" />
+              <input id="email" name="email" type="email" class="form-control  text-dark" placeholder="Email"
+                required />
             </div>
           </div>
 
@@ -616,10 +614,9 @@
                   <i class="fas fa-pencil-alt"></i>
                 </span>
               </div>
-              <textarea class="form-control  text-dark" placeholder="Message" name="Message"></textarea>
+              <textarea id="message" name="message" class="form-control  text-dark" placeholder="Message" required></textarea>
             </div>
           </div>
-
           <input type="submit" value="Submit" class="btn btn-danger  btn-lg" />
           <input type="reset" value="Reset" class="btn btn-danger btn-lg">
         </form>
