@@ -1,12 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
+var md5 = require('md5');
 
 const app = express();
 
-const GMAIL_USER="hsharma1_be19@thapar.edu";
-const GMAIL_PASS="IlU__HS!"
+const GMAIL_USER = "hsharma1_be19@thapar.edu";
+const GMAIL_PASS = "IlU__HS!"
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -22,34 +23,27 @@ app.get("/", function (req, res) {
 });
 
 app.post('/', (req, res) => {
-    // Instantiate the SMTP server
-    const smtpTrans = nodemailer.createTransport({
+    var transporter = nodemailer.createTransport({
         service: 'gmail',
-        port: 465,
-        secure: true,
         auth: {
-            user: GMAIL_USER,
-            pass: GMAIL_PASS
+            user: 'hsharma1_be19@thapar.edu',
+            pass: 'IlU__HS!'
         }
-    })
-
-    // Specify what the email will look like
-    const mailOpts = {
-        from: 'Your sender info here', // This is ignored by Gmail
+    });
+    var mailOptions = {
+        from: GMAIL_USER,
         to: GMAIL_USER,
-        subject: 'New message from contact form at tylerkrys.ca',
+        subject: 'New message from contact form at Herroku',
         text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
-    }
+    };
 
-    // Attempt to send the email
-    smtpTrans.sendMail(mailOpts, (error, response) => {
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            res.sendFile(__dirname+"/success.html") // Show a page indicating failure
+            return (console.log(error));
         }
-        else {
-            res.sendFile(__dirname+"/success.html"); // Show a page indicating success
-        }
-    })
+        res.sendFile("index.html");
+        console.log("Successfully Sent Message");
+    });
 });
 app.listen(process.env.PORT || 3000, function () {
     console.log("Server started on port 3000.");
