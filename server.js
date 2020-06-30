@@ -6,8 +6,8 @@ var md5 = require('md5');
 
 const app = express();
 
-const GMAIL_USER = "hsharma1_be19@thapar.edu";
-const GMAIL_PASS = "IlU__HS!"
+const GMAIL_USER = "***";
+const GMAIL_PASS = "***"
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
