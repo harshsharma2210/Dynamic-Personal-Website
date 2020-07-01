@@ -7,7 +7,7 @@ var md5 = require('md5');
 const app = express();
 
 const GMAIL_USER = "***";
-const GMAIL_PASS = "***"
+const GMAIL_PASS = "***";
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -26,8 +26,8 @@ app.post('/', (req, res) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'hsharma1_be19@thapar.edu',
-            pass: 'IlU__HS!'
+            user: GMAIL_USER,
+            pass: GMAIL_PASS
         }
     });
     var mailOptions = {
@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
         if (error) {
             return (console.log(error));
         }
-        res.sendFile("index.html");
+        res.redirect("/");
         console.log("Successfully Sent Message");
     });
 });
